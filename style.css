@@ -1,0 +1,113 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-spoke {
+    background-color: #198754 !important; /* Green Header */
+    color: #ffffff !important;
+}
+
+.subhead-dark-green, 
+.subhead-dark-green th {
+    background-color: #14532d !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-align: center !important;     /* Horizontal Center */
+    vertical-align: middle !important;  /* Vertical Middle */
+}
+
+.btn-whatsapp {
+    background-color: #25d366 !important;
+    border-color: #25d366 !important;
+}
+.btn-whatsapp:hover {
+    background-color: #1ebc57 !important;
+}
+
+.custom-black-table, 
+.custom-black-table th, 
+.custom-black-table td {
+    border: 1px solid #000000 !important;
+}
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    .no-print, .btn, #excelFile, #groupSelect, #timeSlotSelect {
+        display: none !important;
+    }
+    
+}
+
+
+
+/* মোবাইল ডিভাইসে টেবিল হ্যান্ডলিং */
+@media (max-width: 767px) {
+    .table-responsive {
+        font-size: 0.85rem; /* মোবাইলে ফন্ট সাইজ ছোট করা */
+    }
+    
+    .btn {
+        width: 100%; /* মোবাইল বাটনের উইডথ ফুল করে দেওয়া */
+        margin-bottom: 5px;
+    }
+
+    .gap-2 {
+        gap: 0.5rem !important; /* বাটনগুলোর মাঝে গ্যাপ ঠিক রাখা */
+    }
+
+    /* মোবাইলে হেডারের ফন্ট সাইজ কমানো */
+    .government-header h3 { font-size: 1.2rem; }
+    .government-header h5 { font-size: 1rem; }
+}
+
+/* টেবিলের সেল প্যাডিং বাড়ানো যাতে টাচ করতে সুবিধা হয় */
+.table td, .table th {
+    padding: 0.75rem 0.5rem !important;
+}
+
+/* লোডিং ইন্ডিকেটর (নিচে যোগ করুন) */
+#loading {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255,255,255,0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+@media print {
+    /* পুরো কন্টেইনারকে ল্যাপটপের মতো সাইজ দেওয়া */
+    .print-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* টেবিল যেন পেজ ব্রেক না করে */
+    table {
+        table-layout: fixed;
+        width: 100% !important;
+        page-break-inside: avoid;
+    }
+    
+    tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+
+    /* মোবাইল হিডেন বাটনগুলো হাইড রাখা */
+    .no-print { display: none !important; }
+}
